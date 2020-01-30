@@ -11,24 +11,19 @@ namespace SweepstakesProject
         private string firstName;
         private string lastName;
         private string email;
-        public int regNumber;
+        public string Email { get { return email; } }
+        public int regID;
 
-        public Contestant(string name, string email, int regNumber)
+        public Contestant(string name, string email)
         {
             firstName = name.Split(' ')[0];
             lastName = name.Split(' ')[1];
             this.email = email;
-            this.regNumber = regNumber;
         }
 
         public string GetName()
         {
             return firstName + " " + lastName;
-        }
-
-        public string GetEmail()
-        {
-            return email;
         }
     }
 }
