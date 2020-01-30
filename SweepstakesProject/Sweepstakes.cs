@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    class Sweepstakes
+    public class Sweepstakes
     {
         Dictionary<int, Contestant> contestants = new Dictionary<int, Contestant>();
         Random ran = new Random();
