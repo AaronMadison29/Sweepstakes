@@ -36,5 +36,10 @@ namespace SweepstakesProject
             Console.WriteLine($"Contestant email: {contestant.Email}");
             Console.WriteLine($"Contestant ID: {contestant.regID}");
         }
+
+        public static void EmptySweepstakes()
+        {
+            Console.WriteLine("The sweepstakes doesn't have any contestants!");
+        }
     }
 }
