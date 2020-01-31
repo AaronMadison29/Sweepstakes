@@ -10,8 +10,17 @@ namespace SweepstakesProject
     {
         public Dictionary<int, Contestant> contestants = new Dictionary<int, Contestant>();
         Random ran = new Random();
-        public string name;
+        private string name;
         private int registrationID;
+
+        public string Name
+        { 
+            get
+            {
+                return name;
+            }
+        }
+
 
         public Sweepstakes(string name)
         {
@@ -26,16 +35,14 @@ namespace SweepstakesProject
             registrationID++;
         }
 
-        public Contestant PickWinner()
+        public void PickWinner()
         {
             if(contestants.Count == 0)
             {
                 UserInterface.EmptySweepstakes();
-                return null;
             }
             Contestant winner = contestants[ran.Next(1, registrationID)];
             UserInterface.DeclareWinner(winner);
-            return winner;
         }
 
         public void PrintContestentInfo(Contestant contestant)

@@ -10,19 +10,19 @@ namespace SweepstakesProject
     {
         public static string GetContestantName()
         {
-            Console.Write("Enter yourr first and last name, seperated by a space: ");
+            Console.Write("Enter the contestant's first and last name, seperated by a space: ");
             return Console.ReadLine();
         }
 
         public static string GetContestantEmail()
         {
-            Console.Write("Enter your email: ");
+            Console.Write("Enter the contestant's email: ");
             return Console.ReadLine(); ;
         }
 
         public static void DisplayID(int regID, string name)
         {
-            Console.WriteLine($"Thank you, {name}. Your registration ID is: {regID}");
+            Console.WriteLine($"{name}'s contestant's registration ID is: {regID}");
         }
 
         public static void DeclareWinner(Contestant winner)
@@ -40,6 +40,24 @@ namespace SweepstakesProject
         public static void EmptySweepstakes()
         {
             Console.WriteLine("The sweepstakes doesn't have any contestants!");
+        }
+
+        public static string ManagerChoice()
+        {
+            Console.Write("What kind of sweepstakes data structure would you like to use, Stack or Queue?: ");
+            return Console.ReadLine();
+        }
+
+        public static string SweepstakesNameChoice()
+        {
+            Console.Write("What would you like to name your sweepstakes?: ");
+            return Console.ReadLine();
+        }
+
+        public static string Continue()
+        {
+            Console.Write("Would you like to continue?: y/n");
+            return Console.ReadLine();
         }
     }
 }
