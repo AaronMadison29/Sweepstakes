@@ -24,8 +24,8 @@ namespace SweepstakesTest
         {
             //Assemble
             Sweepstakes sweepstakes = new Sweepstakes("Loto");
-            Sweepstakes sweepstakes2 = new Sweepstakes("Loto");
-            Sweepstakes sweepstakes3 = new Sweepstakes("Loto");
+            Sweepstakes sweepstakes2 = new Sweepstakes("Loto2");
+            Sweepstakes sweepstakes3 = new Sweepstakes("Loto3");
             SweepstakesStackManager sweepstakesStack = new SweepstakesStackManager();
             //Act
             sweepstakesStack.InsertSweepstakes(sweepstakes);
