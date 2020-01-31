@@ -56,7 +56,7 @@ namespace SweepstakesProject
 
         public static string Continue()
         {
-            Console.Write("Would you like to continue?: y/n");
+            Console.Write("Would you like to continue?y/n: ");
             return Console.ReadLine();
         }
     }

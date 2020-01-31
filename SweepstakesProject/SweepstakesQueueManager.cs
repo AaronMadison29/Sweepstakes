@@ -16,7 +16,11 @@ namespace SweepstakesProject
         }
         public Sweepstakes PeekSweepstakes()
         {
-            return sweepstakesQueue.Peek();
+            if (sweepstakesQueue.Peek() != null)
+            {
+                return sweepstakesQueue.Peek();
+            }
+            return null;
         }
 
         public void InsertSweepstakes(Sweepstakes sweepstakes)
