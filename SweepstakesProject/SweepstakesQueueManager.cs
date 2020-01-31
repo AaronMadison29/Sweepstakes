@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    class SweepstakesQueueManager<T> : ISweepstakesManager
+    class SweepstakesQueueManager : ISweepstakesManager
     {
-        Queue<T> sweeptakesQueue = new Queue<T>();
+        Queue<Sweepstakes> sweeptakesQueue = new Queue<Sweepstakes>();
 
         public Sweepstakes GetSweepstakes()
         {

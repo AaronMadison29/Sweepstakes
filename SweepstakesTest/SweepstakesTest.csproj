@@ -52,6 +52,7 @@
     <Compile Include="ContestantTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SweepstakeTest.cs" />
+    <Compile Include="SweepstakesStackManagerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
