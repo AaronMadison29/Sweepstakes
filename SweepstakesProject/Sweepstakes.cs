@@ -35,14 +35,16 @@ namespace SweepstakesProject
             registrationID++;
         }
 
-        public void PickWinner()
+        public Contestant PickWinner()
         {
             if(contestants.Count == 0)
             {
                 UserInterface.EmptySweepstakes();
+                return null;
             }
             Contestant winner = contestants[ran.Next(1, registrationID)];
-            UserInterface.DeclareWinner(winner);
+            UserInterface.DeclareWinner(winner, name);
+            return winner;
         }
 
         public void PrintContestentInfo(Contestant contestant)

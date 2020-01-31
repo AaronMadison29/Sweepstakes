@@ -25,5 +25,19 @@ namespace SweepstakesProject
         {
             return firstName + " " + lastName;
         }
+
+        public void Notify(Contestant winner, Sweepstakes sweepstakes)
+        {
+            SweepstakeEmailer emailer = new SweepstakeEmailer();
+
+            if (winner.GetName() == GetName())
+            {
+                emailer.SendWinnerEmail(this, sweepstakes);
+            }
+            else
+            {
+                emailer.SendLoserEmail(this, sweepstakes, winner);
+            }
+        }
     }
 }

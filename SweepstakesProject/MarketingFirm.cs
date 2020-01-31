@@ -9,7 +9,6 @@ namespace SweepstakesProject
     class MarketingFirm : ManagerFactory
     {
         ISweepstakesManager _manager;
-        string name;
 
         public MarketingFirm(ISweepstakesManager _manager)
         {
@@ -29,7 +28,7 @@ namespace SweepstakesProject
             {
                 newSweepstakes.RegisterContestant(TakeNewContestantInformation());
 
-                running = UserInterface.Continue() == "y" ? true : false;
+                running = UserInterface.AddAnotherContestant() == "y" ? true : false;
 
             } while (running);
         }
@@ -47,7 +46,9 @@ namespace SweepstakesProject
 
             while(_manager.PeekSweepstakes() != null)
             {
-                _manager.GetSweepstakes().PickWinner();
+                Sweepstakes currentSweepstakes = _manager.GetSweepstakes();
+                Contestant winner = currentSweepstakes.PickWinner();
+                NotifyContestants(currentSweepstakes, winner);
             }
         }
 
@@ -58,9 +59,17 @@ namespace SweepstakesProject
             {
                 CreateSweepstakes();
 
-                running = UserInterface.Continue() == "y" ? true : false;
+                running = UserInterface.MakeAnotherSweepstakes() == "y" ? true : false;
 
             } while (running);
+        }
+
+        private void NotifyContestants(Sweepstakes sweepstakes, Contestant winner)
+        {
+            foreach(KeyValuePair<int, Contestant> contestant in sweepstakes.contestants)
+            {
+                contestant.Value.Notify(winner, sweepstakes);
+            }
         }
     }
 }

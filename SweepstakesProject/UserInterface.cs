@@ -25,9 +25,9 @@ namespace SweepstakesProject
             Console.WriteLine($"{name}'s contestant's registration ID is: {regID}");
         }
 
-        public static void DeclareWinner(Contestant winner)
+        public static void DeclareWinner(Contestant winner, string sweepstakesName)
         {
-            Console.WriteLine($"The winner is: {winner.GetName()}");
+            Console.WriteLine($"The winner of {sweepstakesName} is: {winner.GetName()}");
         }
 
         public static void PrintContestantInfo(Contestant contestant)
@@ -54,10 +54,18 @@ namespace SweepstakesProject
             return Console.ReadLine();
         }
 
-        public static string Continue()
+        public static string AddAnotherContestant()
         {
-            Console.Write("Would you like to continue?y/n: ");
+            Console.Write("Would you like to add another contestant?y/n: ");
             return Console.ReadLine();
         }
+
+        public static string MakeAnotherSweepstakes()
+        {
+            Console.Write("Would you like to create another sweepstakes?y/n: ");
+            return Console.ReadLine();
+        }
+
+
     }
 }
